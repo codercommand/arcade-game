@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bbgeneumbyqvr"]
+[gd_scene load_steps=2 format=3 uid="uid://bbgeneumbyqvr"]
+
+[ext_resource type="Script" path="res://levels/test.gd" id="1_avbut"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_avbut")
+
+[node name="GameplaySessionManager" type="GameplaySessionManager" parent="."]
+
+[connection signal="lost_connection" from="GameplaySessionManager" to="." method="_on_gameplay_session_manager_lost_connection"]
